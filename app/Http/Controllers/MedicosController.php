@@ -63,9 +63,18 @@ class MedicosController extends Controller
         return response()->json($medico, 201);
     }
 
-    // public function update(MedicoRequest $request)
-    // {
-    //     $medico->update($request->update);
-    // }
+    public function update(MedicoRequest $request, Medicos $medico)
+    {
+        $medico->update($request->validated());
+
+        return new MedicoResource($medico);
+    }
+
+    public function destroy(Medicos $medico)
+    {
+        $medico->delete();
+
+        return response()->json(['message' => 'Medico deletado com sucesso!']);
+    }
 
 }

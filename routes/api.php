@@ -25,10 +25,13 @@ Route::prefix('especialidades')->group(function (){
     Route::get('/{especialidade}', [EspecialidadesController::class, 'show']);
     Route::put('/{especialidade}', [EspecialidadesController::class, 'update']);
     Route::delete('/{especialidade}', [EspecialidadesController::class, 'destroy']);
+
 });
 
 Route::prefix('medicos')->group(function (){
     Route::get('/', [MedicosController::class, 'index']);
     Route::post('/', [MedicosController::class, 'store']);
     Route::get('/{medico}', [MedicosController::class, 'show']);
+    Route::put('/{medico}', [MedicosController::class, 'update']);
+    Route::delete('/{medico}', [MedicosController::class, 'destroy']);
 });
