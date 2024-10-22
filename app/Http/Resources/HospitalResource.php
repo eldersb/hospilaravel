@@ -19,7 +19,10 @@ class HospitalResource extends JsonResource
             'endereco' => $this->endereco,
             'telefone' => $this->telefone,
             'medicos' => $this->medicos->map(function ($medico) {
-                return ['nome' => $medico->nome, 'especialidade' => $medico->especialidade->nome];
+                return [
+                    'nome' => $medico->nome,
+                    'especialidade' => $medico->especialidade->nome
+                ];
             })
         ];
     }

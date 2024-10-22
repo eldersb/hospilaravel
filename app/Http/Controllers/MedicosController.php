@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\MedicoRequest;
 use App\Http\Resources\MedicoResource;
 use App\Models\Medicos;
 use Illuminate\Http\Request;
@@ -52,6 +53,19 @@ class MedicosController extends Controller
 
     public function show(Medicos $medico)
     {
-        return $medico;
+        return new MedicoResource($medico);
     }
+
+    public function store(MedicoRequest $request)
+    {
+        $medico = Medicos::create($request->validated());
+
+        return response()->json($medico, 201);
+    }
+
+    // public function update(MedicoRequest $request)
+    // {
+    //     $medico->update($request->update);
+    // }
+
 }
