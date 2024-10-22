@@ -14,7 +14,7 @@ class MedicoResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return ['nome' => $this->nome, 'especialidade' => $this->especialidade->nome, 'hospital' => $this->hospital->nome];
+        return ['nome' => $this->nome, 'crm' => $this->crm, 'especialidade' => $this->especialidade->nome, 'hospital' => $this->hospital->nome];
 
     }
 }

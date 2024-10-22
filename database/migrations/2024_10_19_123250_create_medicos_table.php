@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('medicos', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
+            $table->string('crm');
             $table->unsignedBigInteger('hospital_id');
             $table->unsignedBigInteger('especialidades_id');
             $table->timestamps();

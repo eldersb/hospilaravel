@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\MedicoRequest;
 use App\Http\Resources\MedicoResource;
 use App\Models\Medicos;
+use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 
 class MedicosController extends Controller
@@ -65,6 +67,7 @@ class MedicosController extends Controller
 
     public function update(MedicoRequest $request, Medicos $medico)
     {
+    
         $medico->update($request->validated());
 
         return new MedicoResource($medico);

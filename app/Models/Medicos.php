@@ -11,6 +11,7 @@ class Medicos extends Model
 
     protected $fillable = [
         "nome",
+        "crm",
         "hospital_id",
         "especialidades_id"
     ];

@@ -23,6 +23,7 @@ class MedicoRequest extends FormRequest
     {
         return [
             'nome' => 'required|string|max:100',
+            'crm' => 'required|string|max: 20',
             'hospital_id' => 'required|exists:hospitais,id',
             'especialidades_id' => 'required|exists:especialidades,id'
         ];

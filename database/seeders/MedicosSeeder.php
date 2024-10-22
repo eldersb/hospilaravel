@@ -13,6 +13,6 @@ class MedicosSeeder extends Seeder
      */
     public function run(): void
     {
-        Medicos::factory(30)->create();
+        Medicos::factory(20)->create();
     }
 }

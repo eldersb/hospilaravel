@@ -20,6 +20,7 @@ class MedicosFactory extends Factory
     {
         return [
             "nome" => $this->faker->name(),
+            "crm" => $this->faker->regexify('[0-9]{6}-[A-Z]{2}'),
             "hospital_id" => Hospital::inRandomOrder()->first(),
             "especialidades_id" => Especialidades::inRandomOrder()->first()
         ];
